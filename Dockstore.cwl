@@ -11,14 +11,14 @@ outputs:
 
 steps:
   untar:
-    run: {include: tar-param.cwl}
+    run: {$include: tar-param.cwl}
     in:
       tarfile: inp
       extractfile: ex
     out: [example_out]
 
   compile:
-    run: {import: arguments.cwl}
+    run: {$import: arguments.cwl}
     in:
       src: untar/example_out
     out: [classfile]
